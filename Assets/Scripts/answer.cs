@@ -1,0 +1,25 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+
+public class answer : MonoBehaviour {
+	public GameObject input;
+	Text box;
+	// Use this for initialization
+	void Awake () {
+		box = GetComponent <Text>();
+
+		box.text = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n";
+
+	
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
+
+
+}
