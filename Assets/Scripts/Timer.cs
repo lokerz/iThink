@@ -12,11 +12,27 @@ public class Timer : MonoBehaviour {
 
 	private int temp;
 	private int n;
-
+	private List<int> id = new List<int>{1, 2, 3, 4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25};
 	// Use this for initialization
 	void Start () {
 		n = duration1;
 		temp = duration1;
+<<<<<<< HEAD
+=======
+		for (int i = 0; i < id.Count; i++) //bagian ngeshuffle
+		{
+			int temp = id[i];		
+			int randomIndex = Random.Range(i, id.Count);
+			id[i] = id[randomIndex];
+			id[randomIndex] = temp;
+		}
+
+		for (int i = 0; i < id.Count; i++) 
+		{
+			Debug.Log ("Indeks ke " + i + " adalah " + id [i]); //buat ngecek hasil shuffle
+		}	
+
+>>>>>>> 35291446d4b17e5015d6fca709dad8006af2f4bb
 		StartCoroutine ("Countdown");
 	}
 	
