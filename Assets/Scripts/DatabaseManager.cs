@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System;
 using System.IO;
 using System.Data;
@@ -9,6 +10,8 @@ using Mono.Data.SqliteClient;
 
 
 public class DatabaseManager : MonoBehaviour {
+
+	private int n;
 
 	public int[] id = new int[26];
 	public int[] musicid = new int[26];
@@ -42,6 +45,7 @@ public class DatabaseManager : MonoBehaviour {
 		}
 		else 
 			Debug.Log("file doesnt exist" );
+		
 		conn = "URI=file:" + newpath; //Path to database.
 		dbconn = new SqliteConnection(conn);
 		dbconn.Open(); //Open connection to the database.
@@ -51,17 +55,19 @@ public class DatabaseManager : MonoBehaviour {
 		sqlQuery = "SELECT ID, MusicID, AnswerKey, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10 " + "FROM Quiz";
 		dbcmd.CommandText = sqlQuery;
 		reader = dbcmd.ExecuteReader();
-		int n = 1;
+		n = 0;
 		while (reader.Read())
 		{
 			id [n] = reader.GetInt32 (0);
 			musicid [n] = reader.GetInt32 (1);
 			answerKey [n] = reader.GetString (2);
-			for(int i = 0; i<10;i++)
-				answers [n,i] = reader.GetString (3+i);
+			Debug.Log (n+" "+ id [n] + " " + answerKey [n] + " ");
+			for (int i = 0; i < 10; i++) {
+				answers [n, i] = reader.GetString (3 + i);
+				Debug.Log (n + "," + i + " " + answers [n, i] + " ");
+			}
 			n++;
 		}
-
 		//DB CLOSE
 		reader.Close();
 		reader = null;
@@ -70,17 +76,31 @@ public class DatabaseManager : MonoBehaviour {
 		dbconn.Close();
 		dbconn = null;
 
-		for(int i = 1; i< 26; i++){
-			Debug.Log (id [i] + " " + answerKey [i] + " ");
-			for (int j = 0; j < 10; j++)
-				Debug.Log (answers [i, j] + " ");
-		}
+		dataWrite ();
 
-		GameObject.Find ("Text2").GetComponent<answer>().databaseWrite ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	public void dataWrite(){
+		Text box = GameObject.Find ("TextBox").GetComponent<Text>();
+		box.text = "Answers : \n";
+		for (int i = 0; i < n; i++) {
+			box.text += id[i];
+			box.text += "; ";
+			box.text += answerKey[i];
+			box.text += "; ";
+			box.text += musicid[i];
+			box.text += "; ";
+			for (int j = 0; j < 10; j++) {
+				box.text += answers [i, j];
+				box.text += ", ";
+			}
+			box.text += "\n";
+		}
+		Debug.Log (box.text);
 	}
 }
