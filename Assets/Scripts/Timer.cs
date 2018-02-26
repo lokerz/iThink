@@ -17,7 +17,6 @@ public class Timer : MonoBehaviour {
 	void Start () {
 		n = duration1;
 		temp = duration1;
-
 		StartCoroutine ("Countdown");
 	}
 	
@@ -27,13 +26,16 @@ public class Timer : MonoBehaviour {
 		if (n <= 0) {
 			StopCoroutine ("Countdown");
 			if (temp == duration1) {
+				//start answer canvas
 				n = duration2;
 				temp = duration2;
 				canvas1.SetActive (false);
 				canvas2.SetActive (true);
 				Debug.Log ("Start Countdown from "+ n);
 				StartCoroutine ("Countdown");
+				GameObject.Find ("GameManager").GetComponent<DatabaseManager2> ().dataWrite ();
 			} else if (temp == duration2) {
+				//start pic canvas
 				n = duration1;
 				temp = duration1;
 				canvas1.SetActive (true);
