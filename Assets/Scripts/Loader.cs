@@ -28,7 +28,6 @@ public class Loader : MonoBehaviour {
 	}
 
 	public void ResLoader(){
-		//n = ManagerRef.GetComponent<DatabaseManager2> ().n;
 		for (int i = 0; i < ManagerRef.GetComponent<DatabaseManager2> ().n; i++) {
 			pic.Add(Resources.Load((i+1).ToString(), typeof (Sprite))as Sprite);
 		}

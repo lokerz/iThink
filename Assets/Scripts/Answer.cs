@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Answer : MonoBehaviour {
-	//public int[] answer = new int[10]{0,0,0,0,0,0,0,0,0,0};
 	private string answerKey;
 	private string answerPlayer;
 	private int score;
@@ -28,10 +27,9 @@ public class Answer : MonoBehaviour {
 	}
 
 	public void answerKeyCompile(){
-		for (int i = 0; i < ManagerRef.GetComponent<DatabaseManager2> ().n; i++) {
+		for (int i = 0; i < ManagerRef.GetComponent<DatabaseManager2> ().maxStage; i++) {
 			answerKey += ManagerRef.GetComponent<DatabaseManager2>().answerKey[TimerRef.GetComponent<Timer> ().id [i]];
 		}
-		Debug.Log (answerKey);
 	}
 
 	public void answerPlayerCatch(){
@@ -41,21 +39,21 @@ public class Answer : MonoBehaviour {
 			else
 				answerPlayer += "0";
 		}
-		Debug.LogWarning (answerPlayer);
 	}
 		
 	public void calculateScore(){
-		for (int i = 0; i < ((10*ManagerRef.GetComponent<DatabaseManager2> ().n)); i++) {
+		for (int i = 0; i < ((10*ManagerRef.GetComponent<DatabaseManager2> ().maxStage)); i++) {
 			if (answerPlayer [i] == '1' && answerKey [i] == '1')
 				score += plus;
 			else if (answerPlayer [i] == '1' && answerKey [i] == '0')
 				score -= minus;
 			else if (answerPlayer [i] == '0' && answerKey [i] == '1')
-				score -= minus;
+				score +=0;
 			else
 				score += 0;
 		}
-		GameObject.Find ("Scoreboard").GetComponent<Text> ().text = score + "/" + (10 * 5 * ManagerRef.GetComponent<DatabaseManager2> ().n);
+		GameObject.Find ("Scoreboard").GetComponent<Text> ().text = score + "/" + (10 * 5 * ManagerRef.GetComponent<DatabaseManager2> ().maxStage);
+		ManagerRef.GetComponent<DatabaseManager2> ().UpdateScoreDB (score);
 	}
 
 }

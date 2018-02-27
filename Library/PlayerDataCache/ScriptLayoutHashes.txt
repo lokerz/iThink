@@ -102,14 +102,14 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 3f32f08a64daf40b09ed864d96fe3840 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransform
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
-4b458fe25ba90350df4b002483bf286f Assembly-CSharp.dll:.DatabaseManager2
+e6c5346ae41e98de5e0d4716984c08b8 Assembly-CSharp.dll:.DatabaseManager2
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingRenderer
 ba613993f24584b172e64a9702252583 Assembly-CSharp.dll:.ToggleControl
-4e0980876ae76ec73fad43f8ae081e80 Assembly-CSharp.dll:.Manager
+fca924d82d52ca67d5d67738336504c1 Assembly-CSharp.dll:.Manager
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.OptionMenu
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Loader
 0c9ec4cd22769712ac2aa0ecc071bb2b Assembly-CSharp.dll:.Answer
@@ -135,5 +135,6 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingRenderer
-729568c0dd1d0002dd3329254ad9249e Assembly-CSharp.dll:.PauseMenu
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.PauseMenu
 59db5c161959cc873d5be4a9d9804e01 Assembly-CSharp.dll:.Timer
+5783889cbf75fd8aa98330b1548eacb0 Assembly-CSharp.dll:.DatabaseManager
