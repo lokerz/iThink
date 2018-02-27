@@ -99,7 +99,7 @@ public class Timer : MonoBehaviour {
 			randomIndex = Random.Range(j, id.Count);
 			id[j] = id[randomIndex];
 			id[randomIndex] = temp;
-			//Debug.Log ("Indeks ke " + j + " adalah " + id [j]); //buat ngecek hasil shuffle
+			Debug.Log (id [j]); //buat ngecek hasil shuffle
 		}
 	}
 		
