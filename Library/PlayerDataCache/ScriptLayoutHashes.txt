@@ -113,6 +113,7 @@ fca924d82d52ca67d5d67738336504c1 Assembly-CSharp.dll:.Manager
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.OptionMenu
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Loader
 0c9ec4cd22769712ac2aa0ecc071bb2b Assembly-CSharp.dll:.Answer
+5783889cbf75fd8aa98330b1548eacb0 Assembly-CSharp.dll:.DatabaseManager
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 60b2bb652410a5867a5ab9a01cd38461 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
@@ -137,4 +138,3 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingRenderer
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.PauseMenu
 59db5c161959cc873d5be4a9d9804e01 Assembly-CSharp.dll:.Timer
-5783889cbf75fd8aa98330b1548eacb0 Assembly-CSharp.dll:.DatabaseManager

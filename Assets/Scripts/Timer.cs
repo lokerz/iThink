@@ -99,7 +99,6 @@ public class Timer : MonoBehaviour {
 			randomIndex = Random.Range(j, id.Count);
 			id[j] = id[randomIndex];
 			id[randomIndex] = temp;
-			Debug.Log (id [j]); //buat ngecek hasil shuffle
 		}
 	}
 		
@@ -122,7 +121,7 @@ public class Timer : MonoBehaviour {
 
 		}
 
-		for (int i = 0; i < random.Count; i++) //bagian ngeshuffle
+		for (int i = 0; i < 10; i++) //bagian ngeshuffle
 		{
 			temp = random[i];		
 			randomIndex = Random.Range(i, random.Count);
@@ -131,7 +130,7 @@ public class Timer : MonoBehaviour {
 		}
 
 		for (int i = 0; i < 10; i++){
-			GameObject.Find ("Toggle" + i).transform.position = pos[i];
+			GameObject.Find ("Toggle" + i).transform.position = pos[random[i]];
 		}
 	}
 }
