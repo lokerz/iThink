@@ -1,74 +1,111 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Timer : MonoBehaviour {
 
-	public int duration1;
-	public int duration2;
+
+	public List<int> id;
+	public int questionTime;
+	public int answerTime;
 
 	public GameObject canvas1;
 	public GameObject canvas2;
 
-	private int temp;
-	private int n;
-	private List<int> id = new List<int>{1, 2, 3, 4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25};
-	// Use this for initialization
+	private int timeTemp;
+	private int timeLeft;
+	private int loopIndex;
+
+	private GameObject ManagerRef;
+	private GameObject AnswerRef;
+	private bool isAnswer = false;
+
 	void Start () {
-		n = duration1;
-		temp = duration1;
-<<<<<<< HEAD
-=======
-		for (int i = 0; i < id.Count; i++) //bagian ngeshuffle
-		{
-			int temp = id[i];		
-			int randomIndex = Random.Range(i, id.Count);
-			id[i] = id[randomIndex];
-			id[randomIndex] = temp;
-		}
+		ManagerRef = GameObject.Find ("GameManager");
+		AnswerRef = GameObject.Find ("AnswerCatcher");
 
-		for (int i = 0; i < id.Count; i++) 
-		{
-			Debug.Log ("Indeks ke " + i + " adalah " + id [i]); //buat ngecek hasil shuffle
-		}	
+		timeLeft = questionTime;
+		timeTemp = questionTime;
+		loopIndex = 0;
 
->>>>>>> 35291446d4b17e5015d6fca709dad8006af2f4bb
-		StartCoroutine ("Countdown");
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
-		if (n <= 0) {
+		if (timeLeft <= 0  && loopIndex < ManagerRef.GetComponent<DatabaseManager2>().n) {
 			StopCoroutine ("Countdown");
-			if (temp == duration1) {
+			if (isAnswer) { //catch answer
+				AnswerRef.GetComponent<Answer> ().answerPlayerCatch ();
+				ResetToggle (); //Release all toggles to off
+				isAnswer = false;
+			}
+
+			if (timeTemp == questionTime) {
 				//start answer canvas
-				n = duration2;
-				temp = duration2;
+				isAnswer = true;
+				timeLeft = answerTime;
+				timeTemp = answerTime;
 				canvas1.SetActive (false);
 				canvas2.SetActive (true);
-				Debug.Log ("Start Countdown from "+ n);
+				Debug.Log ("Start Countdown from "+ timeLeft);
+				gameObject.GetComponent<Loader> ().AnswerLoader (loopIndex);
 				StartCoroutine ("Countdown");
-				GameObject.Find ("GameManager").GetComponent<DatabaseManager2> ().dataWrite ();
-			} else if (temp == duration2) {
-				//start pic canvas
-				n = duration1;
-				temp = duration1;
-				canvas1.SetActive (true);
-				canvas2.SetActive (false);
-				Debug.Log ("Start Countdown from "+ n);
-				StartCoroutine ("Countdown");
+
+			} else if (timeTemp == answerTime) {
+				loopIndex++;
+
+				if (loopIndex == ManagerRef.GetComponent<DatabaseManager2> ().n) {
+					ManagerRef.GetComponent<Manager> ().GameOver ();
+					AnswerRef.GetComponent<Answer> ().answerKeyCompile ();
+					AnswerRef.GetComponent<Answer> ().calculateScore ();
+
+				}
+				else {
+					//start pic canvas
+					timeLeft = questionTime;
+					timeTemp = questionTime;
+					canvas1.SetActive (true);
+					canvas2.SetActive (false);
+					Debug.Log ("Start Countdown from " + timeLeft);
+					gameObject.GetComponent<Loader> ().ImageLoader (loopIndex);
+					gameObject.GetComponent<Loader> ().QuestionLoader (loopIndex);
+					StartCoroutine ("Countdown");
+				}
 			}
-				
 		}
 	}
 
 	IEnumerator Countdown(){
 		while (true) {
-			Debug.Log (n);
+			GameObject.Find ("TimerBox").GetComponent<Text> ().text = timeLeft.ToString();
 			yield return new WaitForSeconds(1);
-			n--;
+			timeLeft--;
 		}
+	}
+	
+	public void Randomizer(int i){
+		id = new List<int>();
+		for (int j = 0; j < i; j++){
+			id.Add (j);
+		}
+
+		for (int j = 0; j < id.Count; j++) //bagian ngeshuffle
+		{
+			int temp = id[j];		
+			int randomIndex = Random.Range(j, id.Count);
+			id[j] = id[randomIndex];
+			id[randomIndex] = temp;
+			//Debug.Log ("Indeks ke " + j + " adalah " + id [j]); //buat ngecek hasil shuffle
+		}
+	}
+		
+	public void ResetToggle(){
+		for (int i = 0; i < 10; i++) {
+			GameObject.Find ("Toggle" + i).GetComponent<Toggle> ().isOn = false;
+		}
+		GameObject.Find ("Answers").GetComponent<ToggleControl> ().toggleCounter = 0;
 	}
 
 }
