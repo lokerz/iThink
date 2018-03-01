@@ -7,10 +7,12 @@ public class Loader : MonoBehaviour {
 	private int index;
 	private int n;
 
-	private Image picbox;
+	private Image picBox;
 	private Text textBox;
+	private AudioSource musicBox;
 
 	private List<Sprite> pic;
+	private List<AudioClip> music;
 	private List<Text> answer;
 
 	private GameObject ManagerRef;
@@ -19,6 +21,7 @@ public class Loader : MonoBehaviour {
 	void Start () {
 		pic = new List<Sprite>();
 		answer = new List<Text> ();
+		music = new List<AudioClip> ();
 		ManagerRef = GameObject.Find ("GameManager");
 	}
 	
@@ -27,18 +30,13 @@ public class Loader : MonoBehaviour {
 		
 	}
 
-	public void ResLoader(){
-		for (int i = 0; i < ManagerRef.GetComponent<DatabaseManager2> ().n; i++) {
-			pic.Add(Resources.Load((i+1).ToString(), typeof (Sprite))as Sprite);
-		}
+	public void ResLoader(int i, int j){
+		for (int k = 0; k < i; k++) 
+			pic.Add(Resources.Load((k+1).ToString(), typeof (Sprite))as Sprite);
+		for(int k = 0; k <= j; k++)
+			music.Add(Resources.Load((k).ToString(), typeof (AudioClip))as AudioClip);
 	}
-
-	public void ImageLoader(int i){
-		index = gameObject.GetComponent<Timer> ().id [i];
-		picbox = GameObject.Find ("ImageBox").GetComponent<Image> ();
-		picbox.sprite = pic [index];
-	}
-
+		
 	public void AnswerLoader(int i){
 		index = gameObject.GetComponent<Timer> ().id [i];
 
@@ -52,6 +50,10 @@ public class Loader : MonoBehaviour {
 		index = gameObject.GetComponent<Timer> ().id [i];
 		textBox = GameObject.Find ("QuestionBox").GetComponent<Text> ();
 		textBox.text = ManagerRef.GetComponent<DatabaseManager2> ().questions [index];
+		picBox = GameObject.Find ("ImageBox").GetComponent<Image> ();
+		picBox.sprite = pic [index];
+		musicBox = GameObject.Find ("MusicBox").GetComponent<AudioSource> ();
+		musicBox.clip = music [ManagerRef.GetComponent<DatabaseManager2> ().musicid [index]];
 	}
 
 }

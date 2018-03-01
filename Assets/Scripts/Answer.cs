@@ -39,7 +39,6 @@ public class Answer : MonoBehaviour {
 			else
 				answerPlayer += "0";
 		}
-		Debug.Log (answerPlayer);
 	}
 		
 	public void calculateScore(){

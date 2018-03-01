@@ -58,11 +58,11 @@ public class DatabaseManager : MonoBehaviour {
 
 		while (reader.Read())
 		{
+			
 			score.Add(reader.GetInt32(0));
 			n++;
 
 		}
-		sortScore ();
 	
 		//DB CLOSE
 		reader.Close();
@@ -71,8 +71,6 @@ public class DatabaseManager : MonoBehaviour {
 		dbcmd = null;
 		dbconn.Close();
 		dbconn = null;
-
-		HiScorePost ();
 	}
 	
 	// Update is called once per frame
@@ -80,19 +78,9 @@ public class DatabaseManager : MonoBehaviour {
 		
 	}
 
-	public void sortScore(){
-		int temp;
-		for (int i = n-1; i > 0; i--) {
-			for (int j = i - 1; j >= 0; j--) {
-				if (score [i] > score [j]) {
-					temp = score [i];
-					score [i] = score [j];
-					score [j] = temp;
-				}
-			}
-		}
-	}
 	public void HiScorePost(){
-		GameObject.Find ("ScoreBox").GetComponent<Text> ().text = score [0].ToString ();
+		for (int i = 0; i < n; i++) {
+			GameObject.Find ("Text"+(i+1).ToString()).GetComponent<Text> ().text = "Stage " + (i+1) + "\n" + score [i].ToString () + "/250";
+		}
 	}
 }

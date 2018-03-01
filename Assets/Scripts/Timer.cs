@@ -68,7 +68,6 @@ public class Timer : MonoBehaviour {
 					timeTemp = questionTime;
 					canvas1.SetActive (true);
 					canvas2.SetActive (false);
-					gameObject.GetComponent<Loader> ().ImageLoader (loopIndex);
 					gameObject.GetComponent<Loader> ().QuestionLoader (loopIndex);
 					GameObject.Find ("QuestionCount").GetComponent<Text> ().text = (loopIndex + 1).ToString () + "/10";
 					StartCoroutine ("Countdown");
