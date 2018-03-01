@@ -16,6 +16,7 @@ public class Timer : MonoBehaviour {
 	private int timeTemp;
 	private int timeLeft;
 	private int loopIndex;
+	private int max;
 
 	private GameObject ManagerRef;
 	private GameObject AnswerRef;
@@ -24,7 +25,7 @@ public class Timer : MonoBehaviour {
 	void Start () {
 		ManagerRef = GameObject.Find ("GameManager");
 		AnswerRef = GameObject.Find ("AnswerCatcher");
-
+		max = ManagerRef.GetComponent<DatabaseManager2> ().maxStage;
 		timeLeft = questionTime;
 		timeTemp = questionTime;
 		loopIndex = 0;
@@ -34,7 +35,7 @@ public class Timer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		if (timeLeft <= 0  && loopIndex < ManagerRef.GetComponent<DatabaseManager2>().maxStage) {
+		if (timeLeft <= 0  && loopIndex < max) {
 			StopCoroutine ("Countdown");
 			if (isAnswer) { //catch answer
 				AnswerRef.GetComponent<Answer> ().answerPlayerCatch ();
@@ -56,7 +57,7 @@ public class Timer : MonoBehaviour {
 			} else if (timeTemp == answerTime) {
 				loopIndex++;
 
-				if (loopIndex == ManagerRef.GetComponent<DatabaseManager2> ().maxStage) {
+				if (loopIndex == max) {
 					ManagerRef.GetComponent<Manager> ().GameOver ();
 					AnswerRef.GetComponent<Answer> ().answerKeyCompile ();
 					AnswerRef.GetComponent<Answer> ().calculateScore ();
@@ -69,7 +70,7 @@ public class Timer : MonoBehaviour {
 					canvas1.SetActive (true);
 					canvas2.SetActive (false);
 					gameObject.GetComponent<Loader> ().QuestionLoader (loopIndex);
-					GameObject.Find ("QuestionCount").GetComponent<Text> ().text = (loopIndex + 1).ToString () + "/10";
+					GameObject.Find ("QuestionCount").GetComponent<Text> ().text = (loopIndex + 1).ToString () + "/" + max;
 					StartCoroutine ("Countdown");
 				}
 			}

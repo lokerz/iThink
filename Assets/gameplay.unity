@@ -440,7 +440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 
-  questionTime: 10
+  questionTime: 5
   answerTime: 10
   canvas1: {fileID: 353905948}
   canvas2: {fileID: 1025049173}
@@ -5075,7 +5075,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1/10
+  m_Text: 1/5
 --- !u!222 &1877168320
 CanvasRenderer:
   m_ObjectHideFlags: 0
