@@ -48,12 +48,21 @@ public class Loader : MonoBehaviour {
 
 	public void QuestionLoader(int i){
 		index = gameObject.GetComponent<Timer> ().id [i];
-		textBox = GameObject.Find ("QuestionBox").GetComponent<Text> ();
-		textBox.text = ManagerRef.GetComponent<DatabaseManager2> ().questions [index];
+
 		picBox = GameObject.Find ("ImageBox").GetComponent<Image> ();
 		picBox.sprite = pic [index];
+
 		musicBox = GameObject.Find ("MusicBox").GetComponent<AudioSource> ();
 		musicBox.clip = music [ManagerRef.GetComponent<DatabaseManager2> ().musicid [index]];
+		musicBox.Play();
+
+		if (picBox.sprite == null) {
+			picBox.color += new Color (0, 0, 0, -255);
+			textBox = GameObject.Find ("QuestionBox").GetComponent<Text> ();
+			textBox.text = ManagerRef.GetComponent<DatabaseManager2> ().questions [index];
+		}
+
+	
 	}
 
 }

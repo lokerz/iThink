@@ -24,22 +24,17 @@ public class DatabaseManager : MonoBehaviour {
 
 		#if UNITY_STANDALONE_WINDOWS || UNITY_EDITOR
 
-		string newpath = Application.dataPath + "/StreamingAssets/datas.db";
+			string newpath = Application.dataPath + "/StreamingAssets/datas.db";
 
 		#elif UNITY_ANDROID
-
-		string filepath = "jar:file://" + Application.dataPath + "!/assets/datas.db"; 
-		string newpath = Application.persistentDataPath + "/datas.db";
-		if(!File.Exists(newpath))
-		{
-		Debug.Log("file doesnt exist" );
-		// if it doesn't ->
-		// open StreamingAssets directory and load the db -> 
-		Debug.Log(filepath);
-		WWW loadDB = new WWW(filepath);
-		while(!loadDB.isDone) {}
-		// then save to Application.persistentDataPath
-		File.WriteAllBytes(newpath, loadDB.bytes);
+			string filepath = "jar:file://" + Application.dataPath + "!/assets/datas.db"; 
+			string newpath = Application.persistentDataPath + "/datas.db";
+			if(!File.Exists(newpath))
+			{
+				WWW loadDB = new WWW(filepath);
+				while(!loadDB.isDone) {}
+	
+			File.WriteAllBytes(newpath, loadDB.bytes);
 		}
 		#endif
 
@@ -80,7 +75,7 @@ public class DatabaseManager : MonoBehaviour {
 
 	public void HiScorePost(){
 		for (int i = 0; i < n; i++) {
-			GameObject.Find ("Text"+(i+1).ToString()).GetComponent<Text> ().text = "Stage " + (i+1) + "\n" + score [i].ToString () + "/250";
+			GameObject.Find ("Text"+(i+1).ToString()).GetComponent<Text> ().text = "Stage " + (i+1) + "\n" + score [i].ToString () + "/100";
 		}
 	}
 }

@@ -5,9 +5,9 @@ using UnityEngine;
 public class StageManager : MonoBehaviour {
 
 	public static int loadStageID;
+	public static bool isMute = false;
 	// Use this for initialization
 	void Start () {
-		loadStageID = 1;
 	}
 	
 	// Update is called once per frame
