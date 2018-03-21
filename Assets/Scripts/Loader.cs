@@ -24,15 +24,12 @@ public class Loader : MonoBehaviour {
 		music = new List<AudioClip> ();
 		ManagerRef = GameObject.Find ("GameManager");
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 
 	public void ResLoader(int i, int j){
+		int x = (StageManager.loadStageID - 1) * 10; 
 		for (int k = 0; k < i; k++) 
-			pic.Add(Resources.Load((k+1).ToString(), typeof (Sprite))as Sprite);
+			pic.Add(Resources.Load("soal_"+(x+k+1).ToString(), typeof (Sprite))as Sprite);
 		for(int k = 0; k <= j; k++)
 			music.Add(Resources.Load((k).ToString(), typeof (AudioClip))as AudioClip);
 	}

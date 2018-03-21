@@ -20,11 +20,7 @@ public class Answer : MonoBehaviour {
 		TimerRef = GameObject.Find ("Timer");
 
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 
 	public void answerKeyCompile(){
 		for (int i = 0; i < ManagerRef.GetComponent<DatabaseManager2> ().maxStage; i++) {

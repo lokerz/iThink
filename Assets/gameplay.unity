@@ -2683,7 +2683,6 @@ GameObject:
   - component: {fileID: 926145765}
   - component: {fileID: 926145764}
   - component: {fileID: 926145763}
-  - component: {fileID: 926145766}
   m_Layer: 0
   m_Name: Pause
   m_TagString: Untagged
@@ -2770,17 +2769,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &926145766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 926145761}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bd2323cce6f7cc4fbca56670bd79c04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &934519287
 GameObject:
   m_ObjectHideFlags: 0
@@ -5648,8 +5636,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1800f10fb3ad07a4cbf68b051dc479d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundOn: {fileID: 21300000, guid: 7c2d119c45f51684f9033438a1ee9ab9, type: 3}
-  soundOff: {fileID: 21300000, guid: c452eb8b57dde0949bd885ddab41be27, type: 3}
+  soundOn: {fileID: 21300000, guid: 75f3d4e0a1ab72c4198a7fedd6ea36e8, type: 3}
+  soundOff: {fileID: 21300000, guid: 73a0911e6df5cbb4383fe4bfb3807813, type: 3}
 --- !u!1 &1811305380
 GameObject:
   m_ObjectHideFlags: 0
@@ -6191,8 +6179,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1800f10fb3ad07a4cbf68b051dc479d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundOn: {fileID: 21300000, guid: 7c2d119c45f51684f9033438a1ee9ab9, type: 3}
-  soundOff: {fileID: 21300000, guid: c452eb8b57dde0949bd885ddab41be27, type: 3}
+  soundOn: {fileID: 21300000, guid: 75f3d4e0a1ab72c4198a7fedd6ea36e8, type: 3}
+  soundOff: {fileID: 21300000, guid: 73a0911e6df5cbb4383fe4bfb3807813, type: 3}
 --- !u!114 &2012219044
 MonoBehaviour:
   m_ObjectHideFlags: 0

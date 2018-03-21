@@ -67,11 +67,6 @@ public class DatabaseManager : MonoBehaviour {
 		dbconn.Close();
 		dbconn = null;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
 	public void HiScorePost(){
 		for (int i = 0; i < n; i++) {
