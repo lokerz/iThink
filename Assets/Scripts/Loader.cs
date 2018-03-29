@@ -50,8 +50,8 @@ public class Loader : MonoBehaviour {
 		picBox.sprite = pic [index];
 
 		musicBox = GameObject.Find ("MusicBox").GetComponent<AudioSource> ();
-		musicBox.clip = music [ManagerRef.GetComponent<DatabaseManager2> ().musicid [index]];
-		musicBox.Play();
+		//musicBox.clip = music [ManagerRef.GetComponent<DatabaseManager2> ().musicid [index]];
+		//musicBox.Play();
 
 		if (picBox.sprite == null) {
 			picBox.color += new Color (0, 0, 0, -255);

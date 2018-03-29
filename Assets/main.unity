@@ -393,8 +393,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: Resume
+      - m_Target: {fileID: 991076315}
+        m_MethodName: Exit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1796,7 +1796,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6e18002343c462741b97a2649b21d867, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0856ea52b51244f4e93a820659b94aa1, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
