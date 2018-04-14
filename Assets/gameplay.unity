@@ -3236,6 +3236,7 @@ MonoBehaviour:
   isOption: 0
   isOver: 0
   isStage: 0
+  gameplay: gameplay
 --- !u!114 &991076316
 MonoBehaviour:
   m_ObjectHideFlags: 0
