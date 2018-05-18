@@ -16,8 +16,10 @@ public class ToggleControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		for (int i = 0; i < 10; i++) {
-			if (GameObject.Find ("Toggle" + i ).GetComponent<Toggle> ().isOn)
+			if (GameObject.Find ("Toggle" + i).GetComponent<Toggle> ().isOn) {
 				toggleCount [i] = 1;
+				GameObject.Find ("Toggle" + i).GetComponent<Toggle> ().interactable = false;
+			}
 			else
 				toggleCount [i] = 0;
 			toggleCounter += toggleCount [i];
@@ -32,12 +34,13 @@ public class ToggleControl : MonoBehaviour {
 					GameObject.Find ("Toggle" + i).GetComponent<Toggle> ().interactable = false;
 			}
 
-		} else {
+		} /*else {
 			for (int i = 0; i < 10; i++) {
 				if (!GameObject.Find ("Toggle"+i).GetComponent<Toggle> ().interactable)
 					GameObject.Find ("Toggle"+i).GetComponent<Toggle> ().interactable = true;
 			}
-		}
+		}*/
 	
 	}
+
 }

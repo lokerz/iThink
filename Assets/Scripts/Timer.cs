@@ -15,7 +15,7 @@ public class Timer : MonoBehaviour {
 
 	private int timeTemp;
 	private int timeLeft;
-	private int loopIndex;
+	public int loopIndex;
 	private int max;
 
 	private GameObject ManagerRef;
@@ -71,7 +71,7 @@ public class Timer : MonoBehaviour {
 					canvas2.SetActive (false);
 					gameObject.GetComponent<Loader> ().QuestionLoader (loopIndex);
 					GameObject.Find ("QuestionCount").GetComponent<Text> ().text = (loopIndex + 1).ToString () + "/" + max;
-					StartCoroutine ("Countdown");
+					//StartCoroutine ("Countdown");
 				}
 			}
 		}
@@ -105,6 +105,7 @@ public class Timer : MonoBehaviour {
 	public void ResetToggle(){
 		for (int i = 0; i < 10; i++) {
 			GameObject.Find ("Toggle" + i).GetComponent<Toggle> ().isOn = false;
+			GameObject.Find ("Toggle"+i).GetComponent<Toggle> ().interactable = true;
 		}
 		GameObject.Find ("Answers").GetComponent<ToggleControl> ().toggleCounter = 0;
 	}
@@ -132,5 +133,9 @@ public class Timer : MonoBehaviour {
 		for (int i = 0; i < 10; i++){
 			GameObject.Find ("Toggle" + i).transform.position = pos[random[i]];
 		}
+	}
+
+	public void next(){
+		timeLeft = 0;
 	}
 }

@@ -48,7 +48,7 @@ public class Answer : MonoBehaviour {
 			else
 				score += 0;
 		}
-		GameObject.Find ("Scoreboard").GetComponent<Text> ().text = score + "/" + (plus * 5 * ManagerRef.GetComponent<DatabaseManager2> ().maxStage);
+		GameObject.Find ("Scoreboard").GetComponent<Text> ().text = score.ToString();
 		ManagerRef.GetComponent<DatabaseManager2> ().UpdateScoreDB (score);
 	}
 

@@ -17,32 +17,32 @@ PlayerSettings:
   m_SplashScreenBackgroundColor: {r: 1, g: 1, b: 1, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
-  m_SplashScreenOverlayOpacity: 1
+  m_SplashScreenOverlayOpacity: 0.5
   m_SplashScreenAnimation: 0
   m_SplashScreenLogoStyle: 0
   m_SplashScreenDrawMode: 0
   m_SplashScreenBackgroundAnimationZoom: 1
   m_SplashScreenLogoAnimationZoom: 1
-  m_SplashScreenBackgroundLandscapeAspect: 0.5996094
-  m_SplashScreenBackgroundPortraitAspect: 0.5996094
+  m_SplashScreenBackgroundLandscapeAspect: 0.59765625
+  m_SplashScreenBackgroundPortraitAspect: 0.59765625
   m_SplashScreenBackgroundLandscapeUvs:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0.99999994
-    height: 0.999349
-  m_SplashScreenBackgroundPortraitUvs:
     serializedVersion: 2
     x: 0
     y: 0
     width: 1
     height: 1
+  m_SplashScreenBackgroundPortraitUvs:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0.99999994
+    height: 0.999349
   m_SplashScreenLogos:
   - logo: {fileID: 21300000, guid: 705a9e4583ba82b4580042f2c009ec42, type: 3}
     duration: 3
-  m_SplashScreenBackgroundLandscape: {fileID: 1, guid: 00000000000000000000000000000000,
+  m_SplashScreenBackgroundLandscape: {fileID: 1, guid: 0,
     type: 0}
-  m_SplashScreenBackgroundPortrait: {fileID: 1, guid: 00000000000000000000000000000000,
+  m_SplashScreenBackgroundPortrait: {fileID: 1, guid: 0,
     type: 0}
   m_VirtualRealitySplashScreen: {fileID: 0}
   m_HolographicTrackingLossScreen: {fileID: 0}
@@ -495,9 +495,9 @@ PlayerSettings:
   psp2InfoBarColor: 0
   psp2ScriptOptimizationLevel: 0
   psmSplashimage: {fileID: 0}
-  splashScreenBackgroundSourceLandscape: {fileID: 21300000, guid: 64f3f6661da49e04eae455188a23332b,
+  splashScreenBackgroundSourceLandscape: {fileID: 21300000, guid: 59a7330f60e42144bac7f451bc130c5b,
     type: 3}
-  splashScreenBackgroundSourcePortrait: {fileID: 21300000, guid: 64f3f6661da49e04eae455188a23332b,
+  splashScreenBackgroundSourcePortrait: {fileID: 21300000, guid: 59a7330f60e42144bac7f451bc130c5b,
     type: 3}
   spritePackerPolicy: 
   webGLMemorySize: 256

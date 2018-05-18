@@ -9,7 +9,7 @@ public class Loader : MonoBehaviour {
 
 	private Image picBox;
 	private Text textBox;
-	private AudioSource musicBox;
+	//private AudioSource musicBox;
 
 	private List<Sprite> pic;
 	private List<AudioClip> music;
@@ -36,10 +36,10 @@ public class Loader : MonoBehaviour {
 		
 	public void AnswerLoader(int i){
 		index = gameObject.GetComponent<Timer> ().id [i];
-
 		for (int j = 0; j < 10; j++) {
 			answer.Add(GameObject.Find("Answer"+j).GetComponent<Text>());
 			answer [j].GetComponentInChildren<Text> ().text = ManagerRef.GetComponent<DatabaseManager2> ().answers [index] [j];
+			GameObject.Find ("Circle" + j).GetComponent<Checker> ().check ();
 		}
 	}
 
@@ -49,7 +49,7 @@ public class Loader : MonoBehaviour {
 		picBox = GameObject.Find ("ImageBox").GetComponent<Image> ();
 		picBox.sprite = pic [index];
 
-		musicBox = GameObject.Find ("MusicBox").GetComponent<AudioSource> ();
+		//musicBox = GameObject.Find ("MusicBox").GetComponent<AudioSource> ();
 		//musicBox.clip = music [ManagerRef.GetComponent<DatabaseManager2> ().musicid [index]];
 		//musicBox.Play();
 
