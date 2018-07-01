@@ -22,7 +22,7 @@ public class DatabaseManager : MonoBehaviour {
 	void Start () {
 		score = new List<int>();
 
-		#if UNITY_STANDALONE_WINDOWS || UNITY_EDITOR
+		#if UNITY_STANDALONE_WIN || UNITY_EDITOR
 
 			string newpath = Application.dataPath + "/StreamingAssets/datas.db";
 

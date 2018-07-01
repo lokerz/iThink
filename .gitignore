@@ -4,3 +4,6 @@ Builds/iThinkBeta.apk
 *.apk
 *.rar
 
+Assembly-CSharp.csproj
+Assembly-CSharp.csproj
+Assets/gameplay.unity

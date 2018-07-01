@@ -11,6 +11,3 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/gameplay.unity
     guid: f5f561abf9f5343409a3d7442596e04d
-  - enabled: 0
-    path: 
-    guid: c5c17d4ead4f5ce4f87bcaed530ab309
