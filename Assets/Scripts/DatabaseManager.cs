@@ -70,7 +70,11 @@ public class DatabaseManager : MonoBehaviour {
 
 	public void HiScorePost(){
 		for (int i = 0; i < n; i++) {
-			GameObject.Find ("Text"+(i+1).ToString()).GetComponent<Text> ().text = "Stage " + (i+1) + "\n" + score [i].ToString () + "/100";
+			if(i == 5)
+				GameObject.Find ("Text"+(i+1).ToString()).GetComponent<Text> ().text = "Time Attack\n" + score [i].ToString ();
+			else
+				GameObject.Find ("Text"+(i+1).ToString()).GetComponent<Text> ().text = "Stage " + (i+1) + "\n" + score [i].ToString () + "/100";
+
 		}
 	}
 }

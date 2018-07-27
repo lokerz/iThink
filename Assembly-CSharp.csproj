@@ -52,14 +52,19 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Answer.cs" />
+     <Compile Include="Assets\Scripts\Answer2.cs" />
      <Compile Include="Assets\Scripts\Checker.cs" />
+     <Compile Include="Assets\Scripts\Checker2.cs" />
      <Compile Include="Assets\Scripts\DatabaseManager.cs" />
      <Compile Include="Assets\Scripts\DatabaseManager2.cs" />
+     <Compile Include="Assets\Scripts\DatabaseManager3.cs" />
      <Compile Include="Assets\Scripts\Loader.cs" />
+     <Compile Include="Assets\Scripts\Loader2.cs" />
      <Compile Include="Assets\Scripts\Manager.cs" />
      <Compile Include="Assets\Scripts\SoundManager.cs" />
      <Compile Include="Assets\Scripts\StageManager.cs" />
      <Compile Include="Assets\Scripts\Timer.cs" />
+     <Compile Include="Assets\Scripts\Timer2.cs" />
      <Compile Include="Assets\Scripts\ToggleControl.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

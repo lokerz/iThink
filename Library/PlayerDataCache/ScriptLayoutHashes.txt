@@ -1,4 +1,4 @@
-WindowsStandalone
+Android
 dc07d7ad69b399a46e92c483bf1c04ca UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsTracker
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 9f07aaefd0255462bb6e4f9e5da6b2d4 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -110,7 +110,7 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingRenderer
 ba613993f24584b172e64a9702252583 Assembly-CSharp.dll:.ToggleControl
-9b60ff894229202d0c6d388000ac68ab Assembly-CSharp.dll:.Manager
+ef7f6ec015fa29c7d2534d3af0ff51f9 Assembly-CSharp.dll:.Manager
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Loader
 0c9ec4cd22769712ac2aa0ecc071bb2b Assembly-CSharp.dll:.Answer
 5783889cbf75fd8aa98330b1548eacb0 Assembly-CSharp.dll:.DatabaseManager
@@ -139,3 +139,8 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingRenderer
 3f6bf23edd98b20a8beab5d417619b10 Assembly-CSharp.dll:.Timer
 cbf2d44ca8a957774cce118aaf38cac7 Assembly-CSharp.dll:.SoundManager
+f03e0020ab0e5c6dff697b53e34943f8 Assembly-CSharp.dll:.Answer2
+a0017fd8ede48bc14e211709dc93f8cd Assembly-CSharp.dll:.Checker2
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Loader2
+1a731ec27cb94eda0ccff051e2d07474 Assembly-CSharp.dll:.Timer2
+5abfd8c56da2645f4f737ac87e750f12 Assembly-CSharp.dll:.DatabaseManager3
